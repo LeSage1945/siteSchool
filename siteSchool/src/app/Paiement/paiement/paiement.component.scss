@@ -1,0 +1,20 @@
+.section{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: orange;
+}
+// .section .divImage{
+//     border: 2px solid red;
+// }
+.section .divImage img{
+    height: 100%;
+    width: 100%;
+}
+.section form{
+    border: 2px solid red;
+}
+.section form, .section .divImage{
+    height: 300px;
+}
