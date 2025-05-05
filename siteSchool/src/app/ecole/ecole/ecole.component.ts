@@ -1,15 +1,12 @@
 import { Component } from '@angular/core';
 import { EcoleService } from 'src/app/service/ecole.service';
-import { Iecole } from 'src/app/model/ecole';
 
 @Component({
-  selector: 'app-paiement',
-  templateUrl: './paiement.component.html',
-  styleUrls: ['./paiement.component.scss']
+  selector: 'app-ecole',
+  templateUrl: './ecole.component.html',
+  styleUrls: ['./ecole.component.scss']
 })
-export class PaiementComponent {
-
-  ecoles: Iecole[] = []
+export class EcoleComponent {
 
   constructor(
     private serviceEcole: EcoleService
@@ -21,8 +18,7 @@ export class PaiementComponent {
 
   getAllEcole(){
     return this.serviceEcole.getAllEcole().subscribe((data) =>{
-      console.log(data);   
-      this.ecoles = data   
+      console.log(data);      
     })
   }
 

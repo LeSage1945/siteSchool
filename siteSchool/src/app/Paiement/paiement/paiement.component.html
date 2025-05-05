@@ -1,17 +1,14 @@
 <section class="section">
-    <div class="divImage col-3 bg-primary">
-        <img src="../../../assets/images/mtn momo.jpg" alt="" class="img-fluid">
+    <div class="divImage  col-0 col-lg-4 col-md-5 shadow">
+        <!-- <img src="../../../assets/images/5921785.jpg" alt="" class="img-fluid"> -->
     </div>
-    <form class="col-3 p-4">
+    <form class="col-10 col-lg-4 col-md-5 p-4 shadow raduis">
         <fieldset>
             <legend>Disabled fieldset example</legend>
             <div class="mb-3">
                 <label for="disabledSelect" class="form-label">Ecoles</label>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                <select class="form-select" name="ecoles" [ngModel]="ecoles" aria-label="Default select example">
+                    <option *ngFor="let ecole of ecoles" [value]="ecole.CodeEtab">{{ecole.NomEtab}}</option>
                 </select>
             </div>
 

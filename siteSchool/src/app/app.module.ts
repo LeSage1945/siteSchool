@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from  '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PaiementComponent } from './Paiement/paiement/paiement.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { ServiceComponent } from './Paiement/service/service.component';
 import { ContactComponent } from './contact/contact.component';
+import { EcoleComponent } from './ecole/ecole/ecole.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,14 @@ import { ContactComponent } from './contact/contact.component';
     PaiementComponent,
     HeaderComponent,
     FooterComponent,
-    ServiceComponent,
-    ContactComponent
+    ContactComponent,
+    EcoleComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
