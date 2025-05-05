@@ -8,18 +8,4 @@ import { EcoleService } from 'src/app/service/ecole.service';
 })
 export class EcoleComponent {
 
-  constructor(
-    private serviceEcole: EcoleService
-  ){}
-
-  ngOnInit(){
-    this.getAllEcole()
-  }
-
-  getAllEcole(){
-    return this.serviceEcole.getAllEcole().subscribe((data) =>{
-      console.log(data);      
-    })
-  }
-
 }

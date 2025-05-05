@@ -13,10 +13,6 @@ export class EcoleService {
     private http: HttpClient
   ) { }
 
-  ngOnInit(){
-    this.getAllEcole()
-  }
-
   getAllEcole(): Observable<any>{
     return this.http.get(this.ApiURL)
   }

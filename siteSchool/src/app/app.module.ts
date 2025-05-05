@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { EcoleComponent } from './ecole/ecole/ecole.component';
+import { AccueilComponent } from './accueil/accueil.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { EcoleComponent } from './ecole/ecole/ecole.component';
     FooterComponent,
     ContactComponent,
     EcoleComponent,
+    AccueilComponent,
   ],
   imports: [
     BrowserModule,
