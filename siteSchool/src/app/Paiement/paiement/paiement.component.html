@@ -9,21 +9,27 @@
                 <input type="text" class="form-control" name="CodeEtablissement" disabled="true" ngModel [(ngModel)]="CodeEtablissement" aria-label="Username" aria-describedby="addon-wrapping">
             </div>
 
-            <label for="disabledSelect" class="form-label mt-3">Nom</label>
-            <div class="input-group flex-nowrap">
-                <span class="input-group-text" id="addon-wrapping">#</span>
-                <input type="text" class="form-control" name="Nom" ngModel placeholder="Entrez le nom de l'eleve" aria-label="Username" aria-describedby="addon-wrapping">
-            </div>
-
-            <label for="disabledSelect" class="form-label mt-3">Prenom</label>
-            <div class="input-group flex-nowrap">
-                <span class="input-group-text" id="addon-wrapping">#</span>
-                <input type="text" class="form-control" name="Prenom" ngModel placeholder="Entrez le prenom de l'eleve" aria-label="Username" aria-describedby="addon-wrapping">
+            <div class="d-lg-flex d-md-flex">
+                <div class="col-5">
+                    <label for="disabledSelect" class="form-label mt-3">Nom</label>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">#</span>
+                        <input type="text" class="form-control" name="Nom" ngModel placeholder="Entrez le nom de l'eleve" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                </div>
+                <div class="col-2"></div>
+                <div class="col-5">
+                    <label for="disabledSelect" class="form-label mt-3">Prenom</label>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">#</span>
+                        <input type="text" class="form-control" name="Prenom" ngModel placeholder="Entrez le prenom de l'eleve" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                </div>
             </div>
 
             <button type="submit" class="btn btn-primary mt-4">Rechercher</button>
 
-            <div class="tableau mt-3 hover">
+            <div class="tableau mt-3 hover" *ngIf="this.eleveTrouve.length > 0">
                 <table class="table table-striped mt-3 table-hover">
                     <thead>
                         <tr>
