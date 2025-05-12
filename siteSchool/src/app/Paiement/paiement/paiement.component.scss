@@ -5,21 +5,21 @@
     justify-content: center;
     background-color: orange;
 }
-.section .divImage{
-    background-image: url(../../../assets/images/5921785.jpg);
-    background-size: cover;
-    background-position: center;
-}
-// .section .divImage img{
-//     height: 100%;
-//     width: 100%;
-// }
+// formulaie
 .section form{
     border-radius: 0px 25px 25px 0px;
 }
-.section .divImage{
-    border-radius: 25px 0px 0px 25px;
+
+//  tableau
+.section form fieldset .tableau{
+    overflow-y: scroll; 
+    height: 210px;
 }
-.section form, .section .divImage{
-    height: 590px;
+.section form fieldset .tableau table{
+    border-collapse: collapse;
+}
+.section form fieldset .tableau table thead{
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }

@@ -1,1 +1,30 @@
-<p>ecole works!</p>
+<section class="container">
+    <h2 mat-dialog-title>Liste des ecoles</h2>
+    <div>
+        <input type="text" name="recherche" value="recherche..." [(ngModel)]="recherche" placeholder="Recherche..." class="form-control">
+    </div>
+    <div class="tableau mt-3 bg-danger">
+        <table class="table table-striped mt-3 hover">
+            <thead>
+                <tr>
+                  <th scope="col" class="text-center">Code etablissement</th>
+                  <th scope="col" class="text-center">Nom etablissement</th>
+                  <th scope="col" class="text-center">Prenom de l'eleve </th>
+                  <th scope="col" class="text-center">Ville</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ecole of recherches">
+                  <td>{{ecole.CodeEtab}}</td>
+                  <td>{{ecole.NomEtab}}</td>
+                  <td>{{ecole.Ville}}</td>
+                  <td>
+                    <button class="btn btn-primary" (click)="infosEveles(ecole)" mat-button mat-dialog-close>Selectionner</button>
+                  </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <button mat-button mat-dialog-close class="btn btn-danger">Close</button>
+</section>
+

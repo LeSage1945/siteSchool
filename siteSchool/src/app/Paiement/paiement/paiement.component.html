@@ -1,45 +1,62 @@
 <section class="section">
-    <div class="divImage  col-0 col-lg-4 col-md-5 shadow">
-        <!-- <img src="../../../assets/images/5921785.jpg" alt="" class="img-fluid"> -->
-    </div>
-    <form class="col-10 col-lg-4 col-md-5 p-4 shadow raduis">
+    <form class="w-75 p-4 shadow raduis" #form="ngForm" (ngSubmit)="rechercheForm(form)">
         <fieldset>
-            <legend>Disabled fieldset example</legend>
-            <div class="mb-3">
-                <label for="disabledSelect" class="form-label">Ecoles</label>
-                <select class="form-select" name="ecoles" [ngModel]="ecoles" aria-label="Default select example">
-                    <option *ngFor="let ecole of ecoles" [value]="ecole.CodeEtab">{{ecole.NomEtab}}</option>
-                </select>
-            </div>
+            <legend>{{nomEtablissement}}</legend>
 
-            <div class="mb-3">
-                <label for="disabledSelect" class="form-label">Classe</label>
-                <select class="form-select" name="ecoles" [ngModel]="ecoles" aria-label="Default select example">
-                    <option *ngFor="let ecole of ecoles" [value]="ecole.CodeEtab">{{ecole.NomEtab}}</option>
-                </select>
-            </div>
-
-            <div class="mb-3">
-                <label for="disabledSelect" class="form-label">Eleves</label>
-                <select class="form-select" name="ecoles" [ngModel]="ecoles" aria-label="Default select example">
-                    <option *ngFor="let ecole of ecoles" [value]="ecole.CodeEtab">{{ecole.NomEtab}}</option>
-                </select>
-            </div>
-
-            <div class="mb-3">
-                <label for="disabledSelect" class="form-label">Mois</label>
-                <select class="form-select" name="ecoles" [ngModel]="ecoles" aria-label="Default select example">
-                    <option *ngFor="let ecole of ecoles" [value]="ecole.CodeEtab">{{ecole.NomEtab}}</option>
-                </select>
-            </div>
-
-            <label for="disabledSelect" class="form-label">Montant</label>
+            <label for="disabledSelect" class="form-label">Code de l'etablissement</label>
             <div class="input-group flex-nowrap">
-                <span class="input-group-text" id="addon-wrapping">@</span>
-                <input type="text" class="form-control" placeholder="Entrez le montant" aria-label="Username" aria-describedby="addon-wrapping">
+                <span class="input-group-text" id="addon-wrapping">#</span>
+                <input type="text" class="form-control" name="CodeEtablissement" disabled="true" ngModel [(ngModel)]="CodeEtablissement" aria-label="Username" aria-describedby="addon-wrapping">
             </div>
 
-            <button type="submit" class="btn btn-primary mt-4">Valider</button>
+            <label for="disabledSelect" class="form-label mt-3">Nom</label>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">#</span>
+                <input type="text" class="form-control" name="Nom" ngModel placeholder="Entrez le nom de l'eleve" aria-label="Username" aria-describedby="addon-wrapping">
+            </div>
+
+            <label for="disabledSelect" class="form-label mt-3">Prenom</label>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">#</span>
+                <input type="text" class="form-control" name="Prenom" ngModel placeholder="Entrez le prenom de l'eleve" aria-label="Username" aria-describedby="addon-wrapping">
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-4">Rechercher</button>
+
+            <div class="tableau mt-3 hover">
+                <table class="table table-striped mt-3 table-hover">
+                    <thead>
+                        <tr>
+                          <th scope="col">ID</th>
+                          <th scope="col">Metricule</th>
+                          <th scope="col">Nom</th>
+                          <th scope="col">Prenom</th>
+                          <th scope="col">DateNaissance</th>
+                          <th scope="col">LieuNaissance</th>
+                          <th scope="col">Classe</th>
+                          <th scope="col">Etablissement</th>
+                          <th scope="col">Photo</th>
+                          <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let eleve of eleveTrouve">
+                          <th scope="row">{{eleve.IDELEVE}}</th>
+                          <td>{{eleve.Metricule}}</td>
+                          <td>{{eleve.Nom}}</td>
+                          <td>{{eleve.Prenom}}</td>
+                          <th scope="row">{{eleve.DateNaissance}}</th>
+                          <td>{{eleve.LieuNaissance}}</td>
+                          <td>{{eleve.Classe}}</td>
+                          <td>{{eleve.Etablissement}}</td>
+                          <td>{{eleve.Photo}}</td>
+                          <td>
+                            <button class="btn btn-primary" (click)="openDialog(eleve)">Selectionner</button>
+                          </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> 
         </fieldset>
     </form>
 </section>

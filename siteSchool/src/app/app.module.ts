@@ -12,6 +12,9 @@ import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { EcoleComponent } from './ecole/ecole/ecole.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule} from '@angular/material/dialog';
+import { ValiderPaiementComponent } from './valider-paiement/valider-paiement.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +25,15 @@ import { AccueilComponent } from './accueil/accueil.component';
     ContactComponent,
     EcoleComponent,
     AccueilComponent,
+    ValiderPaiementComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
