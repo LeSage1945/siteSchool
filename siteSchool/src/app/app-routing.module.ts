@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: 'paiement/:CodeEtab/:NomEtab', component: PaiementComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'ecole', component: EcoleComponent},
-  {path: 'validerPaiement', component: ValiderPaiementComponent},
+  {path: 'validerPaiement/:ID/:classe', component: ValiderPaiementComponent},
 ];
 
 @NgModule({

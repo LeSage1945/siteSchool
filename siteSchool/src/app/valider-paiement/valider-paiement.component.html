@@ -1,43 +1,54 @@
-<section>
-    <form class="raduis p-5">
-        <fieldset>
-            <legend class="p-5">Disabled fieldset example</legend>
-
-            <label for="disabledSelect" class="form-label">Solde</label>
-            <div class="input-group flex-nowrap">
-                <span class="input-group-text" id="addon-wrapping">@</span>
-                <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping">
+<section class="">
+    <div class="w-75 mx-auto p-4" *ngIf="!loading">
+        <div class="d-lg-flex d-md-flex d-block justify-content-space-between" style="border: none">     
+            <div class="col-12 col-lg-5 col-md-5">
+                <label for="" class="label-form">Matricule</label>
+                <input type="text" class="form-control" [(ngModel)]="Metricule" disabled="true">
             </div>
 
-            <label for="disabledSelect" class="form-labe mt-3">Montant</label>
-            <div class="input-group flex-nowrap">
-                <span class="input-group-text" id="addon-wrapping">@</span>
-                <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping">
+            <div class="col-lg-2 col-md-2 col-0"></div>
+            
+            <div class="col-12 col-lg-5 col-md-5">
+                <label for="" class="label-form">Classe</label>
+                <input type="text" class="form-control col-12 col-lg-6 col-md-6" [(ngModel)]="Classe" disabled="true">
             </div>
+        </div>
+        
+        <div>
+            <label for="" class="label-form mt-3">Nom</label>
+            <input type="text" class="form-control col-lg-6 col-md-6" [(ngModel)]="Nom" disabled="true">
+        </div>
 
-            <label for="disabledSelect" class="form-label mt-3">Mois</label>
-            <select class="form-select" aria-label="Default select example">
-                <option value="1">Janvier</option>
-                <option value="2">Fevrier</option>
-                <option value="3">Mars</option>
-                <option value="1">Avril</option>
-                <option value="2">Mai</option>
-                <option value="3">Jui</option>
-                <option value="1">Jueill</option>
-                <option value="2">Aout</option>
-                <option value="3">Septembre</option>
-                <option value="1">Octobre</option>
-                <option value="2">Novembre</option>
-                <option value="3">Decembre</option>
-            </select>
+        <div>
+            <label for="" class="label-form mt-3">Prenom</label>
+            <input type="text" class="form-control col-lg-6 col-md-6" [(ngModel)]="Prenom" disabled="true">
+        </div>
+    </div>
 
-            <label for="disabledSelect" class="form-label mt-3">Telephone</label>
-            <div class="input-group flex-nowrap">
-                <span class="input-group-text" id="addon-wrapping">@</span>
-                <input type="tel" class="form-control" placeholder="+242" aria-label="Username" aria-describedby="addon-wrapping">
+    <!-- chargement -->
+    <div class="d-flex justify-content-center mt-5 " style="align-items: center;" *ngIf="loading">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <!-- fin chargement -->
+
+    <div class="mt-5 w-75 mx-auto" *ngIf="!loading">
+        <div class="row row-cols-lg-3 row-cols-md-3 mx-auto ">
+            <div class="mb-sm-0 btn" *ngFor="let elem of tabDetailProduits" (click)="openDialog(elem)">
+                <div class="card shadow" style="text-align: start;">
+                    <div class="bg-primary">
+                        <h1 class="p-2" style="color: #fff">Frais : {{elem.Libelle}}</h1>
+                        <h2 class="p-2" style="color: #fff">code : {{elem.CodeFrais}}</h2>
+                    </div>
+                    <div class="p-2">
+                        <p>Total a payer :  <span class="text-danger">{{elem.Total_A_Payer}}</span></p>
+                        <p>Total deja payer : <span class="text-danger">{{elem.Total_Deja_Paye}}</span></p>
+                        <p>Total impayer : <span class="text-danger">{{elem.Total_Impaye}}</span></p>
+                        <p>Reste a payer : <span class="text-danger">{{elem.Reste_A_Payer}}</span></p>
+                    </div>
+                </div>
             </div>
-
-            <button type="submit" class="btn btn-primary form-control mt-4" mat-button mat-dialog-close>Payer maintenant</button>
-        </fieldset>
-    </form>
+        </div>
+    </div>
 </section>

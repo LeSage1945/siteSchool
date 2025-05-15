@@ -15,6 +15,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule} from '@angular/material/dialog';
 import { ValiderPaiementComponent } from './valider-paiement/valider-paiement.component';
+import { FormvailiderPaiementComponent } from './valider-paiement/formvailider-paiement/formvailider-paiement.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ValiderPaiementComponent } from './valider-paiement/valider-paiement.co
     EcoleComponent,
     AccueilComponent,
     ValiderPaiementComponent,
+    FormvailiderPaiementComponent,
   ],
   imports: [
     BrowserModule,

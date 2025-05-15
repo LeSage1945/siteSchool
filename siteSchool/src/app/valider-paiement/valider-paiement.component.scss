@@ -1,0 +1,11 @@
+
+section{
+    height: 120vh;
+}
+.card{
+    transition: 0.5s;
+}
+.card:hover{
+    background-color: rgb(179, 205, 235);
+    transition: 0.5s;
+}

@@ -6,7 +6,7 @@
             <label for="disabledSelect" class="form-label">Code de l'etablissement</label>
             <div class="input-group flex-nowrap">
                 <span class="input-group-text" id="addon-wrapping">#</span>
-                <input type="text" class="form-control" name="CodeEtablissement" disabled="true" ngModel [(ngModel)]="CodeEtablissement" aria-label="Username" aria-describedby="addon-wrapping">
+                <input type="text" class="form-control" name="CodeEcole" ngModel [(ngModel)]="CodeEcole" aria-label="Username" aria-describedby="addon-wrapping">
             </div>
 
             <div class="d-lg-flex d-md-flex">
@@ -28,6 +28,11 @@
             </div>
 
             <button type="submit" class="btn btn-primary mt-4">Rechercher</button>
+                <div class="d-flex justify-content-center mt-5" *ngIf="loading">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
 
             <div class="tableau mt-3 hover" *ngIf="this.eleveTrouve.length > 0">
                 <table class="table table-striped mt-3 table-hover">
@@ -57,7 +62,7 @@
                           <td>{{eleve.Etablissement}}</td>
                           <td>{{eleve.Photo}}</td>
                           <td>
-                            <button class="btn btn-primary" (click)="openDialog(eleve)">Selectionner</button>
+                            <button class="btn btn-primary" (click)="pageValiderPaiement(eleve)">Selectionner</button>
                           </td>
                         </tr>
                     </tbody>
