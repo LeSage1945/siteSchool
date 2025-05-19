@@ -62,7 +62,6 @@ export class PaiementComponent {
     console.log(id);
     console.log(classe);
     
-    // this.router.navigateByUrl('/validerPaiement/' + encodeURIComponent(id) + '/' +classe)
     this.router.navigateByUrl('/validerPaiement/' + id + '/' + classe)
   }
 }

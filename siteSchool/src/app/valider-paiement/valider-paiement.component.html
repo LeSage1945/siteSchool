@@ -1,5 +1,5 @@
 <section class="">
-    <div class="w-75 mx-auto p-4" *ngIf="!loading">
+    <div class="w-lg-75 w-md-75 w-100 mx-auto p-4" *ngIf="!loading">
         <div class="d-lg-flex d-md-flex d-block justify-content-space-between" style="border: none">     
             <div class="col-12 col-lg-5 col-md-5">
                 <label for="" class="label-form">Matricule</label>
@@ -33,7 +33,7 @@
     </div>
     <!-- fin chargement -->
 
-    <div class="mt-5 w-75 mx-auto" *ngIf="!loading">
+    <div class="mt-5 w-100 p-2 mx-auto" *ngIf="!loading">
         <div class="row row-cols-lg-3 row-cols-md-3 mx-auto ">
             <div class="mb-sm-0 btn" *ngFor="let elem of tabDetailProduits" (click)="openDialog(elem)">
                 <div class="card shadow" style="text-align: start;">

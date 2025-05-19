@@ -1,52 +1,23 @@
-main{
-    height: 100vh;
-    background-color: orange;
-}
-main .section1{
-    height: 500px;
-    justify-content: center;
-    align-items: center;
-}
-main .section1 .parent{
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
-// main section div .contenu ul li{
-//     // font-size: 25px;
+// main{
+//     // height: 100vh;
 // }
-main .section1 div .contenu button{
-    transition: 0.5s;
-    border: none;
-}
-main .section1 div .contenu button:hover{
-    padding: 10px;
-    transition: 0.5s;
-    background-color: red;
-    border: none;
-}
-main .section1 .imageBg p{
-    background-image: url(../../assets/images/eSchoolPay.jpeg);
+main .section1{
+    height: 100vh;
+    background-image: url(../../assets/images/img4.jpg);
     background-size: cover;
     background-position: center;
-    height: 400px;
-    border-radius: 25px;
+    background-repeat: no-repeat;
 }
-
-// // section2
-// main .section2 .divContent{ 
-//     justify-content: center;   
-// }
-
-// main .section2 .divContent img{
-//     height: 500px;
-// }
-
-// // section3
-// main .section3 h2{
-//     text-align: center;
-// }
-// main .section3 .div1 .col .card img{
-//     height: 200px;
-// }
+main .section1 .div_container{
+    align-items: center;
+    height: 100%;
+}
+main .section1 .div_container div{
+    color: #fff;
+}
+main .section1 .div_container div h1{
+    font-size: 2rem;
+}
+main .section1 .div_container div ul li{
+    font-size: 1rem;
+}

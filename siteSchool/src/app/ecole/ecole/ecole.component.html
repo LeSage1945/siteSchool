@@ -1,9 +1,21 @@
-<section class="container">
-    <h2 mat-dialog-title>Liste des ecoles</h2>
-    <div>
-        <input type="text" name="recherche" value="recherche..." [(ngModel)]="recherche" placeholder="Recherche..." class="form-control">
+<section class="container p-2">
+
+    <div class="recherche">
+      <h1 mat-dialog-title>Liste des ecoles</h1>
+      <div>
+          <input type="text" name="recherche" value="recherche..." [(ngModel)]="recherche" (input)="0" placeholder="Recherche..." class="form-control">
+      </div>
     </div>
-    <div class="tableau mt-3 bg-danger">
+
+    <!-- chargement -->
+    <div class="d-flex justify-content-center mt-5 " style="align-items: center;" *ngIf="loading">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <!-- fin chargement -->
+
+    <!-- <div class="tableau mt-3" *ngIf="!loading">
         <table class="table table-striped mt-3 hover">
             <thead>
                 <tr>
@@ -24,7 +36,23 @@
                 </tr>
             </tbody>
         </table>
+    </div> -->
+
+    <div class="tableau mt-5" *ngIf="!loading">
+      <div class="row">
+        <div class="col-sm-12 col-lg-6 col-md-6 m-auto mb-3 mb-sm-0 py-3" *ngFor="let ecole of recherches">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Code de l'ecole : <span class="text-primary">{{ecole.CodeEtab}}</span></h5>
+              <h2 class="card-text">{{ecole.NomEtab}}</h2>
+              <p class="card-text">{{ecole.Ville}}</p>
+              <button class="btn btn-primary" (click)="infosEveles(ecole)" mat-button mat-dialog-close>Selectionner</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <button mat-button mat-dialog-close class="btn btn-danger">Close</button>
+
+
 </section>
 

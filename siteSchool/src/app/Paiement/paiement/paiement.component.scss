@@ -1,9 +1,10 @@
 .section{
-    height: 100vh;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: orange;
+    background-color: #1a1f1d;
+    color: #fff;
 }
 // formulaie
 .section form{
@@ -13,7 +14,7 @@
 //  tableau
 .section form fieldset .tableau{
     overflow-y: scroll; 
-    height: 350px;
+    height: 50vh;
 }
 .section form fieldset .tableau table{
     border-collapse: collapse;
@@ -22,4 +23,9 @@
     position: sticky;
     top: 0;
     z-index: 1;
+}
+
+.section form fieldset .zone_repete{
+    height: 100vh;
+    overflow-y: scroll;
 }

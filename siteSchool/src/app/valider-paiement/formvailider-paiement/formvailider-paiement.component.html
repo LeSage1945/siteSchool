@@ -1,24 +1,50 @@
-<section class="p-5">
-    <form class="p-3">
-        <h2>Paiement Des Frais Scolaire De L'eleve :</h2>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Référence</label>
-            <input type="texte" class="form-control" id="Montant" aria-describedby="emailHelp">
-        </div>
+<section class="p-lg-5 p-5">
+    <form class="p-lg-3 p-0" #form="ngForm" (ngSubmit)="submitForm(form)">
+        <h2 class=" text-center">Paiement Des Frais Scolaire De L'eleve : <br> <span class="text-primary text-center">{{nomEleve}}</span></h2>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Détail</label>
-            <input type="texte" class="form-control" id="Montant" aria-describedby="emailHelp">
+            <input type="texte" class="form-control" name="Reference" [(ngModel)]="Reference" id="Montant" aria-describedby="emailHelp">
+        </div>
+        <!-- none -->
+        <div class="mb-3 d-none">
+            <label for="exampleInputEmail1" class="form-label">CodeProduit</label>
+            <input type="texte" class="form-control" name="CodeProduit" ngModel [(ngModel)]="CodeProduit" id="Montant" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3 d-none">
+            <label for="exampleInputEmail1" class="form-label">IDEleve</label>
+            <input type="number" class="form-control" name="IDEleve" ngModel [(ngModel)]="IDEleve" id="Montant" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3 d-none">
+            <label for="exampleInputEmail1" class="form-label">IDProduit</label>
+            <input type="texte" class="form-control" name="IDProduit" ngModel [(ngModel)]="IDProduit" id="Montant" aria-describedby="emailHelp">
+        </div>
+        <!-- none -->
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Référence</label>
+            <input type="texte" class="form-control" name="DetailOperation" [(ngModel)]="DetailOperation" id="Montant" aria-describedby="emailHelp">
+        </div>
+        
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Mobile du payeur</label>
+            <input type="tel" class="form-control" name="MobilePayeur" ngModel [(ngModel)]="MobilePayeur" id="Numéro de téléphone">
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Montant</label>
-            <input type="number" class="form-control" id="Numéro de téléphone">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Mobile du payeur</label>
-            <input type="tel" class="form-control" id="Numéro de téléphone">
+            <input type="number" class="form-control" name="Montant" ngModel [(ngModel)]="Montant" id="Numéro de téléphone">
         </div>
 
-        <button type="submit" class="btn btn-primary form-control">Valider</button>
+        <!-- chargement -->
+        <div class="d-flex justify-content-center mt-5 " style="align-items: center;" *ngIf="loading">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+        <!-- fin chargement -->
+
+        <div *ngIf="message" class="text-primary">{{message}}</div>
+        
+
+        <button type="submit" class="btn btn-primary form-control mt-2">Valider</button>
         <button type="submit" (click)="onNoClick()" mat-button class="btn btn-danger form-control mt-2">Annuler</button>
     </form>
 </section>

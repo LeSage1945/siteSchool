@@ -1,25 +1,25 @@
 <section class="section">
-    <form class="w-75 p-4 shadow raduis" #form="ngForm" (ngSubmit)="rechercheForm(form)">
+    <form class="w-100 col-12 col-lg-6 col-md-6 m-auto p-5 shadow raduis" #form="ngForm" (ngSubmit)="rechercheForm(form)">
         <fieldset>
-            <legend>{{nomEtablissement}}</legend>
+            <legend class="text-primary">{{nomEtablissement}}</legend>
 
-            <label for="disabledSelect" class="form-label">Code de l'etablissement</label>
+            <label for="disabledSelect" class="form-label mt-3" style="font-size: 20px;">Code de l'etablissement</label>
             <div class="input-group flex-nowrap">
                 <span class="input-group-text" id="addon-wrapping">#</span>
                 <input type="text" class="form-control" name="CodeEcole" ngModel [(ngModel)]="CodeEcole" aria-label="Username" aria-describedby="addon-wrapping">
             </div>
 
-            <div class="d-lg-flex d-md-flex">
-                <div class="col-5">
-                    <label for="disabledSelect" class="form-label mt-3">Nom</label>
+            <div>
+                <div>
+                    <label for="disabledSelect" class="form-label mt-3" style="font-size: 20px;">Nom</label>
                     <div class="input-group flex-nowrap">
                         <span class="input-group-text" id="addon-wrapping">#</span>
                         <input type="text" class="form-control" name="Nom" ngModel placeholder="Entrez le nom de l'eleve" aria-label="Username" aria-describedby="addon-wrapping">
                     </div>
                 </div>
-                <div class="col-2"></div>
-                <div class="col-5">
-                    <label for="disabledSelect" class="form-label mt-3">Prenom</label>
+                <!-- <div class="col-2"></div> -->
+                <div>
+                    <label for="disabledSelect" class="form-label mt-3" style="font-size: 20px;">Prenom</label>
                     <div class="input-group flex-nowrap">
                         <span class="input-group-text" id="addon-wrapping">#</span>
                         <input type="text" class="form-control" name="Prenom" ngModel placeholder="Entrez le prenom de l'eleve" aria-label="Username" aria-describedby="addon-wrapping">
@@ -27,14 +27,22 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary mt-4">Rechercher</button>
-                <div class="d-flex justify-content-center mt-5" *ngIf="loading">
-                    <div class="spinner-border" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
-                </div>
+            <div class="d-lg-flex d-md-flex d-block mt-4">
+                <p class="col-12 col-lg-4 col-md-4">
+                    <button type="submit" class="btn btn-primary">Rechercher</button>
+                </p>
+                <p class="col-lg-8 col-md-8 col-12">
+                    <input type="text" class="form-control" name="Recherche" ngModel placeholder="Recherche...">
+                </p>
+            </div>
 
-            <div class="tableau mt-3 hover" *ngIf="this.eleveTrouve.length > 0">
+            <div class="d-flex justify-content-center mt-5" *ngIf="loading">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+
+            <div class="tableau mt-3 hover d-none d-lg-block d-md-block" *ngIf="this.eleveTrouve.length > 0">
                 <table class="table table-striped mt-3 table-hover">
                     <thead>
                         <tr>
@@ -68,6 +76,27 @@
                     </tbody>
                 </table>
             </div> 
+
+            <!-- mobile -->
+            <div class="zone_repete mt-5 w-100 mx-auto d-block d-lg-none d-md-none" *ngIf="this.eleveTrouve.length > 0">
+                <div class="row row-cols-lg-4 row-cols-md-3 mx-auto ">
+                    <div class="mb-sm-0 btn p-2" *ngFor="let eleve of eleveTrouve">
+                        <div class="card shadow" style="text-align: start;">
+                            <div class="p-2">
+                                <p class="d-none">Matricule : <span class="text-primary">{{eleve.Metricule}}</span></p>
+                                <h1><span class="text-primary">{{eleve.Nom}}</span></h1>
+                                <p>Prenom : <span class="text-primary">{{eleve.Prenom}}</span></p>
+                                <p>Date de naissance : <span class="text-primary">{{eleve.DateNaissance}}</span></p>
+                                <p>Lieu de naissance : <span class="text-primary">{{eleve.LieuNaissance}}</span></p>
+                                <p>Classe : <span class="text-primary"></span>{{eleve.Classe}}</p>
+                            </div>
+                            <td>
+                                <button class="btn btn-primary form-control" (click)="pageValiderPaiement(eleve)">Selectionner</button>
+                            </td>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </fieldset>
     </form>
 </section>

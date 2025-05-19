@@ -1,5 +1,21 @@
 section{
-    height: 500px;
-    border-radius: 25%px;
+    height: 50rem;
+    position: relative;
+    overflow: hidden;
+    background-color: #1a1f1d;
+}
+section .recherche{
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+section .recherche h1{
+    color: #ffff;
+    font-size: 2rem;
+}
+section .tableau{
+    height: 35rem;
     overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: transparent;
 }

@@ -37,13 +37,6 @@ export class ValiderPaiementComponent {
 
   readonly dialog = inject(MatDialog);
 
-  openDialog(data: any): void {
-    const dialogRef = this.dialog.open(FormvailiderPaiementComponent, {data: {data}});
-
-    dialogRef.afterClosed().subscribe(result => {
-    });
-  }
-
 
   constructor(
     private servicefraiScolaire: FraisScolairesService,
@@ -82,6 +75,19 @@ export class ValiderPaiementComponent {
       
       this.loading = false
     })
+  }
+
+  openDialog(data: any): void {
+    console.log(data);
+    const idEleve = this.IDELEVE
+    const nomEleve = this.Nom
+    console.log(nomEleve);
+    
+    
+    const dialogRef = this.dialog.open(FormvailiderPaiementComponent, {data: {data, idEleve, nomEleve}});
+
+    dialogRef.afterClosed().subscribe(result => {
+    });
   }
 
 }

@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class EcoleComponent {
   ecoles: Iecole[] = []
   recherche: string = ''
+  loading!: boolean
 
   constructor(
     private service: EcoleService,
@@ -21,9 +22,11 @@ export class EcoleComponent {
   }
 
   getEcoleAll(){
+    this.loading = true
     this.service.getAllEcole().subscribe((data)=>{
       console.log(data);
       this.ecoles = data
+      this.loading = false
     })
   }
 
