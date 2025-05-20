@@ -1,9 +1,9 @@
-// main{
-//     // height: 100vh;
-// }
+main{
+    background-color: rgba(7, 7, 211, 0.884);
+}
 main .section1{
     height: 100vh;
-    background-image: url(../../assets/images/img4.jpg);
+    background-image: url(../../assets/images/airtel.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -13,11 +13,82 @@ main .section1 .div_container{
     height: 100%;
 }
 main .section1 .div_container div{
+    border-radius: 20px;
     color: #fff;
+    background-color: rgba(0, 0, 0, 0);
+    // box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 main .section1 .div_container div h1{
     font-size: 2rem;
 }
 main .section1 .div_container div ul li{
     font-size: 1rem;
+}
+
+
+// section2
+main .section2{
+    height: 80vh;
+    display: flex;
+    align-items: center;
+}
+main .section2 .divContainer{
+    display: flex;
+    align-items: center;
+    height: 60vh;
+    background-image: url(../../assets/images/img1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+main .section2 .divContainer .div2{
+    
+    background-color: black;
+    color: #fff;
+}
+
+// section3, section4, section5
+.section2, .section3, .section4, .section5, .section6{
+    // background-color: rgba(8, 8, 15, 0.884);
+    background-color: rgba(36, 111, 252, 0.884);
+    height: auto;
+}
+.section3 .container, .section4 .container{
+    height: auto;
+}
+.section3 .container div h1, .section4 .container div h1, .section5 .contacte h1{
+    text-align: center;
+    color: #fff;  
+}
+.section3 .container div .row .col-sm-6 .card-body{
+    text-align: center;
+}
+.section3 .container div .row .col-sm-6 .card-body:hover{
+    background-color: rgba(8, 8, 15, 0.884);
+    opacity: 90%;
+    transition: 0.5s;
+    color: #fff;
+    border: none;
+}
+.section3 .container div .row .col-sm-6 .card-body .profil{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.section4 .container .mt-5 .hov :hover{
+    transition: 0.5s;
+    margin-top: 15px;
+}
+
+// section5
+.section5 .container .div2 h1{
+    color: #fff;
+}
+.section5 .container .div2 p{
+    color: #fff;
 }

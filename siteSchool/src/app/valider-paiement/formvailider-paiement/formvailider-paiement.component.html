@@ -1,9 +1,11 @@
-<section class="p-lg-5 p-5">
+<section class="p-3">
     <form class="p-lg-3 p-0" #form="ngForm" (ngSubmit)="submitForm(form)">
-        <h2 class=" text-center">Paiement Des Frais Scolaire De L'eleve : <br> <span class="text-primary text-center">{{nomEleve}}</span></h2>
+        <p class="rond"></p>
+        <h2 class=" text-center mt-3">Paiement Des Frais Scolaire De L'eleve : <br> <span class="text-primary text-center">{{nomEleve}}</span></h2>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Détail</label>
-            <input type="texte" class="form-control" name="Reference" [(ngModel)]="Reference" id="Montant" aria-describedby="emailHelp">
+            <p class="p-2 border">{{Reference}}</p>
+            <!-- <input type="texte" class="form-control" name="Reference" [(ngModel)]="Reference" id="Montant" aria-describedby="emailHelp"> -->
         </div>
         <!-- none -->
         <div class="mb-3 d-none">
@@ -21,7 +23,8 @@
         <!-- none -->
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Référence</label>
-            <input type="texte" class="form-control" name="DetailOperation" [(ngModel)]="DetailOperation" id="Montant" aria-describedby="emailHelp">
+            <p class="p-2 border">{{DetailOperation}}</p>
+            <!-- <input type="texte" class="form-control" name="DetailOperation" [(ngModel)]="DetailOperation" id="Montant" aria-describedby="emailHelp"> -->
         </div>
         
         <div class="mb-3">
@@ -44,7 +47,7 @@
         <div *ngIf="message" class="text-primary">{{message}}</div>
         
 
-        <button type="submit" class="btn btn-primary form-control mt-2">Valider</button>
-        <button type="submit" (click)="onNoClick()" mat-button class="btn btn-danger form-control mt-2">Annuler</button>
+        <button type="submit" class="btn form-control mt-2" style="background-color: rgb(255, 102, 0); color:#fff;">Valider</button>
+        <button type="submit" (click)="onNoClick()" mat-button style="background-color: rgba(36, 111, 252, 0.884);" class="btn form-control mt-2">Annuler</button>
     </form>
 </section>

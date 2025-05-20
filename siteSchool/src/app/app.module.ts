@@ -16,6 +16,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule} from '@angular/material/dialog';
 import { ValiderPaiementComponent } from './valider-paiement/valider-paiement.component';
 import { FormvailiderPaiementComponent } from './valider-paiement/formvailider-paiement/formvailider-paiement.component';
+import { ServicePageComponent } from './service-page/service-page.component';
+import { TemoignagesComponent } from './temoignages/temoignages.component';
+import { EnvironComponent } from './environ/environ.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { FormvailiderPaiementComponent } from './valider-paiement/formvailider-p
     AccueilComponent,
     ValiderPaiementComponent,
     FormvailiderPaiementComponent,
+    ServicePageComponent,
+    TemoignagesComponent,
+    EnvironComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,17 +1,17 @@
 <section class="section">
     <form class="w-100 col-12 col-lg-6 col-md-6 m-auto p-5 shadow raduis" #form="ngForm" (ngSubmit)="rechercheForm(form)">
         <fieldset>
-            <legend class="text-primary">{{nomEtablissement}}</legend>
+            <legend>{{nomEtablissement}}</legend>
 
-            <label for="disabledSelect" class="form-label mt-3" style="font-size: 20px;">Code de l'etablissement</label>
+            <label for="disabledSelect" class="form-label mt-3" style="font-size: 15px;">Code de l'etablissement</label>
             <div class="input-group flex-nowrap">
                 <span class="input-group-text" id="addon-wrapping">#</span>
-                <input type="text" class="form-control" name="CodeEcole" ngModel [(ngModel)]="CodeEcole" aria-label="Username" aria-describedby="addon-wrapping">
+                <input type="text" class="form-control" name="CodeEcole" ngModel [(ngModel)]="CodeEcole" [readOnly]="true" aria-label="Username" aria-describedby="addon-wrapping">
             </div>
 
             <div>
                 <div>
-                    <label for="disabledSelect" class="form-label mt-3" style="font-size: 20px;">Nom</label>
+                    <label for="disabledSelect" class="form-label mt-3" style="font-size: 15px;">Entrez un seul nom de l'élève à rechercher</label>
                     <div class="input-group flex-nowrap">
                         <span class="input-group-text" id="addon-wrapping">#</span>
                         <input type="text" class="form-control" name="Nom" ngModel placeholder="Entrez le nom de l'eleve" aria-label="Username" aria-describedby="addon-wrapping">
@@ -19,7 +19,7 @@
                 </div>
                 <!-- <div class="col-2"></div> -->
                 <div>
-                    <label for="disabledSelect" class="form-label mt-3" style="font-size: 20px;">Prenom</label>
+                    <label for="disabledSelect" class="form-label mt-3" style="font-size: 15px;">Entrez un seul prénom de l'élève à rechercher</label>
                     <div class="input-group flex-nowrap">
                         <span class="input-group-text" id="addon-wrapping">#</span>
                         <input type="text" class="form-control" name="Prenom" ngModel placeholder="Entrez le prenom de l'eleve" aria-label="Username" aria-describedby="addon-wrapping">
@@ -29,7 +29,7 @@
 
             <div class="d-lg-flex d-md-flex d-block mt-4">
                 <p class="col-12 col-lg-4 col-md-4">
-                    <button type="submit" class="btn btn-primary">Rechercher</button>
+                    <button type="submit" class="btnRecherche btn btn-primary">Rechercher</button>
                 </p>
                 <p class="col-lg-8 col-md-8 col-12">
                     <input type="text" class="form-control" name="Recherche" ngModel placeholder="Recherche...">
@@ -70,7 +70,7 @@
                           <td>{{eleve.Etablissement}}</td>
                           <td>{{eleve.Photo}}</td>
                           <td>
-                            <button class="btn btn-primary" (click)="pageValiderPaiement(eleve)">Selectionner</button>
+                            <button class="btn" style="color: #fff;" (click)="pageValiderPaiement(eleve)">Selectionner</button>
                           </td>
                         </tr>
                     </tbody>

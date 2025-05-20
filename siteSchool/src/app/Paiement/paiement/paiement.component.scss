@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #1a1f1d;
+    background-color: rgba(36, 111, 252, 0.884);
     color: #fff;
 }
 // formulaie
@@ -16,6 +16,9 @@
     overflow-y: scroll; 
     height: 50vh;
 }
+.section form fieldset fieldset legend{
+    color: #fff;
+}
 .section form fieldset .tableau table{
     border-collapse: collapse;
 }
@@ -24,8 +27,14 @@
     top: 0;
     z-index: 1;
 }
+.section form fieldset .tableau table tbody td button{
+    background-color: rgb(255, 102, 0);
+}
 
 .section form fieldset .zone_repete{
     height: 100vh;
     overflow-y: scroll;
+}
+.section form fieldset .btnRecherche{
+    background-color: rgb(255, 102, 0);
 }

@@ -1,8 +1,8 @@
 section{
-    height: 50rem;
+    // height: 50rem;
     position: relative;
     overflow: hidden;
-    background-color: #1a1f1d;
+    // background-color: rgba(36, 111, 252, 0.884);
 }
 section .recherche{
     position: sticky;
@@ -14,8 +14,36 @@ section .recherche h1{
     font-size: 2rem;
 }
 section .tableau{
-    height: 35rem;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    height: auto;
+    // overflow-y: scroll;
+    // overflow-x: hidden;
     background-color: transparent;
+}
+section .tableau .card-body{
+    background-color: rgb(255, 102, 0);
+    color: #ffff;
+    height: 140px;
+}
+section .tableau .card-body h2{
+    font-size: 15px;
+    cursor: pointer;
+    transition: 1.5s;
+}
+section .tableau .card-body :hover{
+    font-weight: bold;
+    transition: 1.5s;
+}
+// section .tableau .card :hover{
+//     cursor: pointer;
+//     transition: 1.5s;
+//     color: blue;
+// }
+
+section .tableau .card-body .divbtn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+section .tableau .card-body .divbtn :hover{
+    color: #ffff;
 }

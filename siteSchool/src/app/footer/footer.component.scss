@@ -1,0 +1,15 @@
+footer{
+    background-color: rgba(8, 8, 15, 0.884);
+    justify-content: space-around;
+    color: #fff
+}
+footer .nav{
+    display: flex;
+}
+footer .nav ul li{
+    list-style: none;
+}
+footer .nav ul li a{
+    text-decoration: none;
+    color: #fff
+}

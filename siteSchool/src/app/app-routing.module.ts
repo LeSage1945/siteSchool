@@ -7,6 +7,9 @@ import { ContactComponent } from './contact/contact.component';
 import { EcoleComponent } from './ecole/ecole/ecole.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ValiderPaiementComponent } from './valider-paiement/valider-paiement.component';
+import { EnvironComponent } from './environ/environ.component';
+import { TemoignagesComponent } from './temoignages/temoignages.component';
+import { ServicePageComponent } from './service-page/service-page.component';
 
 const routes: Routes = [
   {path: '', component: AccueilComponent},
@@ -16,6 +19,10 @@ const routes: Routes = [
   {path: 'contact', component: ContactComponent},
   {path: 'ecole', component: EcoleComponent},
   {path: 'validerPaiement/:ID/:classe', component: ValiderPaiementComponent},
+  {path: 'environ', component: EnvironComponent},
+  {path: 'temoignages', component: TemoignagesComponent},
+  {path: 'service', component: ServicePageComponent},
+
 ];
 
 @NgModule({
