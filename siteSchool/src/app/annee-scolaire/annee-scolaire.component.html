@@ -1,0 +1,24 @@
+<section>
+    <div class="modal-body p-5">
+        <form id="yearForm" #form="ngForm" (submit)="submitForm(form)">
+            <div class="mb-3">
+                <label for="schoolYear" class="form-label">Veuillez sélectionner une année scolaire :</label>
+                <select class="form-select mt-3" id="schoolYear" name="anneeScolaire" [(ngModel)]="anneeScolaire" required>
+                      <option value="2021-2022">2021-2022</option>
+                      <option value="2022-2023">2022-2023</option>
+                      <option value="2023-2024">2023-2024</option>
+                      <option value="2024-2025">2024-2025</option>
+                </select>
+
+                <!-- <select class="form-select" id="validationCustom04" name="IDDEPARTEMENT" [ngModel]="IDDEPARTEMENT">
+                    <option *ngFor="let departement of tbDepartement" [value]="departement.IDDEPARTEMENT">{{departement.NomDepartement}}</option>
+                </select> -->
+            </div>
+
+            <div class="modal-footer mt-5">
+                <button type="button" class="btn btn-secondary mx-1" data-bs-dismiss="modal" (click)="onNoClick()">Annuler</button>
+                <button type="submit" class="btn btn-success">Valider</button>
+            </div>
+        </form>
+    </div>
+</section>

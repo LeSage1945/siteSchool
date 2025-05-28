@@ -19,6 +19,7 @@ import { FormvailiderPaiementComponent } from './valider-paiement/formvailider-p
 import { ServicePageComponent } from './service-page/service-page.component';
 import { TemoignagesComponent } from './temoignages/temoignages.component';
 import { EnvironComponent } from './environ/environ.component';
+import { AnneeScolaireComponent } from './annee-scolaire/annee-scolaire.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { EnvironComponent } from './environ/environ.component';
     ServicePageComponent,
     TemoignagesComponent,
     EnvironComponent,
+    AnneeScolaireComponent,
   ],
   imports: [
     BrowserModule,

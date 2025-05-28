@@ -21,5 +21,6 @@ export class AccueilComponent {
   openDialog() {
     this.dialog.open(EcoleComponent);
   }
+  
 
 }

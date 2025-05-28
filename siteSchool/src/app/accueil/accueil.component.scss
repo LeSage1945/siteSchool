@@ -1,19 +1,17 @@
 main{
-    background-color: rgba(7, 7, 211, 0.884);
+    background-color: gray;
 }
 main .section1{
-    height: 100vh;
-    background-image: url(../../assets/images/airtel.jpg);
+    // height: 100vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 main .section1 .div_container{
     align-items: center;
-    height: 100%;
+    height: auto;
 }
 main .section1 .div_container div{
-    border-radius: 20px;
     color: #fff;
     background-color: rgba(0, 0, 0, 0);
     // box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -62,6 +60,12 @@ main .section2 .divContainer .div2{
 }
 .section3 .container div .row .col-sm-6 .card-body{
     text-align: center;
+}
+.section3 .container div .row .col-sm-6 .card-body h1{
+    color: black;
+}
+.section3 .container div .row .col-sm-6 .card-body h1 :hover{
+    color: #fff;
 }
 .section3 .container div .row .col-sm-6 .card-body:hover{
     background-color: rgba(8, 8, 15, 0.884);

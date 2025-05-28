@@ -1,6 +1,5 @@
 import { Component, Inject, inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { IeleveRenvoye } from '../model/eleve';
 import { FraisScolairesService } from '../service/frais-scolaires.service';
 import { NgForm } from '@angular/forms';
 import { EleveService } from '../service/eleve.service';
@@ -8,12 +7,6 @@ import { ActivatedRoute } from '@angular/router';
 import { ItabDeatailProduits } from '../model/tabRetailProduits';
 
 // modal
-import {ChangeDetectionStrategy, signal} from '@angular/core';
-import {FormsModule} from '@angular/forms';
-import {MatButtonModule} from '@angular/material/button';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import { AccueilComponent } from '../accueil/accueil.component';
 import { FormvailiderPaiementComponent } from './formvailider-paiement/formvailider-paiement.component';
 
 @Component({

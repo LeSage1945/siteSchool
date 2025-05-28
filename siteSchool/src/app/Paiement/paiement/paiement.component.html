@@ -31,7 +31,7 @@
                 <p class="col-12 col-lg-4 col-md-4">
                     <button type="submit" class="btnRecherche btn btn-primary">Rechercher</button>
                 </p>
-                <p class="col-lg-8 col-md-8 col-12">
+                <p class="col-lg-8 col-md-8 col-12" *ngIf="this.eleveTrouve.length > 0">
                     <input type="text" class="form-control" name="Recherche" ngModel placeholder="Recherche...">
                 </p>
             </div>
@@ -70,7 +70,8 @@
                           <td>{{eleve.Etablissement}}</td>
                           <td>{{eleve.Photo}}</td>
                           <td>
-                            <button class="btn" style="color: #fff;" (click)="pageValiderPaiement(eleve)">Selectionner</button>
+                            <!-- <button class="btn" style="color: #fff;" (click)="pageValiderPaiement(eleve)">Selectionner</button> -->
+                            <button class="btn" style="color: #fff;" (click)="openDialog(eleve)">Selectionner</button>
                           </td>
                         </tr>
                     </tbody>
@@ -91,7 +92,7 @@
                                 <p>Classe : <span class="text-primary"></span>{{eleve.Classe}}</p>
                             </div>
                             <td>
-                                <button class="btn btn-primary form-control" (click)="pageValiderPaiement(eleve)">Selectionner</button>
+                                <button class="btn btn-primary form-control" (click)="openDialog(eleve)">Selectionner</button>
                             </td>
                         </div>
                     </div>
