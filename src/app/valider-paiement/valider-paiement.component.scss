@@ -1,0 +1,13 @@
+
+section{
+    height: auto;
+    background-color: rgba(36, 111, 252, 0.884);
+    color: #fff;
+}
+.card{
+    transition: 0.5s;
+}
+.card:hover{
+    background-color: rgb(179, 205, 235);
+    transition: 0.5s;
+}

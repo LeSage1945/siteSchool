@@ -1,0 +1,37 @@
+<section class="container p-2 mb-lg-3 mb-md-3">
+
+    <div class="recherche">
+      <h1 mat-dialog-title>Liste des ecoles</h1>
+      <div>
+          <input type="text" name="recherche" value="recherche..." [(ngModel)]="recherche" (input)="0" placeholder="Recherche..." class="form-control">
+      </div>
+    </div>
+
+    <!-- chargement -->
+    <div class="d-flex justify-content-center mt-5 " style="align-items: center;" *ngIf="loading">
+        <div class="spinner-border" style="color: #111;" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <!-- fin chargement -->
+
+    <div class="tableau mt-3 p-2" *ngIf="!loading">
+      <div class="row">
+        <div class="col-sm-6 col-lg-6 col-md-6 m-auto mb-3 mb-sm-0 py-1 px-1" *ngFor="let ecole of recherches">
+          <div class="card">
+            <div class="card-body">
+              <!-- <h5 class="card-title">Code de l'ecole : <span class="text-primary">{{ecole.CodeEtab}}</span></h5> -->
+              <h2 class="card-text" (click)="infosEveles(ecole)">{{ecole.NomEtab}} <span>({{ecole.CodeEtab}})</span></h2>
+              <div class="divbtn">
+                <span class="card-text">Ville : {{ecole.Ville}}</span> <br>
+                <button class="btn" style="background-color: #111; color: #fff;" (click)="infosEveles(ecole)" mat-button mat-dialog-close>Selectionner</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+</section>
+

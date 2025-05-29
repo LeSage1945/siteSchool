@@ -1,0 +1,32 @@
+.section3{
+    background-color: rgba(8, 8, 15, 0.884);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.section3 .container{
+    height: auto;
+}
+.section3 .container div h1{
+    text-align: center;
+    color: #fff;  
+}
+.section3 .container div .row .col-sm-6 .card-body{
+    text-align: center;
+}
+.section3 .container div .row .col-sm-6 .card-body:hover{
+    background-color: rgba(8, 8, 15, 0.884);
+    opacity: 90%;
+    transition: 0.5s;
+    color: #fff;
+    border: none;
+}
+.section3 .container div .row .col-sm-6 .card-body .profil{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
