@@ -23,6 +23,8 @@ export class PaiementComponent {
   // { "Nom":"amon", "Prenom":"jes" , "CodeEcole":"CTP"}
 
   // a remplace 
+  rechercheEffectuee: boolean = false;
+
   eleveTrouve: IeleveRenvoye[] = []
   loading!: boolean
 
@@ -53,19 +55,31 @@ export class PaiementComponent {
     this.nomEtablissement = nomEtab
     console.log(this.CodeEcole);
   }
+  rechercheForm(form: NgForm) {
+  this.loading = true;
+  this.rechercheEffectuee = false;
+  const eleve: Ieleve = form.value;
 
-  rechercheForm(form: NgForm){
-    this.loading = true
-    const eleve: Ieleve = form.value
-    console.log(eleve);
-    
-    this.serviceEleve.postRecherEcole(eleve).subscribe((data)=>{
+  console.log(eleve);
+
+  this.serviceEleve.postRecherEcole(eleve).subscribe({
+    next: (data) => {
       console.log(data);
-      this.eleveTrouve = data
-      this.idEleve = data.IDELEVE      
-      this.loading = false
-    })
-  }
+      this.eleveTrouve = Array.isArray(data) ? data : [];
+      this.rechercheEffectuee = true;
+      this.loading = false;
+      this.idEleve = this.eleveTrouve[0]?.IDELEVE ?? 0;
+    },
+    error: (err) => {
+      console.error(err);
+      this.eleveTrouve = [];
+      this.rechercheEffectuee = true;
+      this.loading = false;
+    }
+  });
+}
+
+
 
   // pageValiderPaiement(Eleve: IeleveRenvoye){    
   //   const id = Eleve.IDELEVE

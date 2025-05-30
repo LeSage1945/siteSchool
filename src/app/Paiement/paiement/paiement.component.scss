@@ -35,3 +35,48 @@
     height: 100vh;
     overflow-y: scroll;
 }
+.table-header {
+  background-color: #b30000;
+}
+
+.styled-table tbody tr:hover {
+  background-color: #ffe5e5;
+  transition: background-color 0.3s ease;
+}
+
+.table th, .table td {
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.btn-search {
+  background-color: #111;
+  color: #fff;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-search:hover {
+  background-color: #b30000;
+  color: #fff;
+  transform: scale(1.02);
+}
+
+.btn-select {
+  background-color: #111;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-size: 13px;
+}
+
+.btn-select:hover {
+  background-color: #b30000;
+  transform: scale(1.05);
+}
+
+.table-responsive {
+  border-radius: 10px;
+  overflow: hidden;
+}

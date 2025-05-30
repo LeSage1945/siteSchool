@@ -1,82 +1,120 @@
 <section class="section">
     <form class="w-100 col-12 col-lg-6 col-md-6 m-auto p-5 shadow raduis" #form="ngForm" (ngSubmit)="rechercheForm(form)">
-        <fieldset>
-            <legend>{{nomEtablissement}}</legend>
+     <fieldset>
+  <fieldset class="p-4 rounded-4 shadow-sm border" style="background-color: #ffffff;">
+    <legend class="mb-4 h5 text-dark fw-semibold">{{ nomEtablissement }}</legend>
 
-            <label for="disabledSelect" class="form-label mt-3" style="font-size: 15px;">Code de l'etablissement</label>
-            <div class="input-group flex-nowrap">
-                <span class="input-group-text" id="addon-wrapping">#</span>
-                <input type="text" class="form-control" name="CodeEcole" ngModel [(ngModel)]="CodeEcole" [readOnly]="true" aria-label="Username" aria-describedby="addon-wrapping">
-            </div>
+    <!-- Code de l'établissement -->
+    <div class="mb-3">
+      <label for="codeEcole" class="form-label fw-semibold" style="color: #000000;">Code de l'établissement</label>
+      <input 
+        type="text" 
+        id="codeEcole" 
+        name="CodeEcole" 
+        class="form-control bg-light text-dark border-0" 
+        [(ngModel)]="CodeEcole" 
+        [readOnly]="true" 
+        placeholder="Code de l'établissement">
+    </div>
 
-            <div>
-                <div>
-                    <label for="disabledSelect" class="form-label mt-3" style="font-size: 15px;">Entrez un seul nom de l'élève à rechercher</label>
-                    <div class="input-group flex-nowrap">
-                        <span class="input-group-text" id="addon-wrapping">#</span>
-                        <input type="text" class="form-control" name="Nom" ngModel placeholder="Entrez le nom de l'eleve" aria-label="Username" aria-describedby="addon-wrapping">
-                    </div>
-                </div>
-                <!-- <div class="col-2"></div> -->
-                <div>
-                    <label for="disabledSelect" class="form-label mt-3" style="font-size: 15px;">Entrez un seul prénom de l'élève à rechercher</label>
-                    <div class="input-group flex-nowrap">
-                        <span class="input-group-text" id="addon-wrapping">#</span>
-                        <input type="text" class="form-control" name="Prenom" ngModel placeholder="Entrez le prenom de l'eleve" aria-label="Username" aria-describedby="addon-wrapping">
-                    </div>
-                </div>
-            </div>
+    <!-- Nom de l'élève -->
+    <div class="mb-3">
+      <label for="nomEleve" class="form-label fw-semibold" style="color: #000000;">Nom de l'élève</label>
+      <input 
+        type="text" 
+        id="nomEleve" 
+        name="Nom" 
+        class="form-control bg-light text-dark border-0" 
+        ngModel 
+        placeholder="Entrez le nom de l'élève">
+    </div>
 
-            <div class="d-lg-flex d-md-flex d-block mt-4">
-                <p class="col-12 col-lg-4 col-md-4">
-                    <button type="submit" class=" btn btn-success btnRecherche ">Rechercher</button>
-                </p>
-                <p class="col-lg-8 col-md-8 col-12" *ngIf="this.eleveTrouve.length > 0">
-                    <input type="text" class="form-control" name="Recherche" ngModel placeholder="Recherche...">
-                </p>
-            </div>
+    <!-- Prénom de l'élève -->
+    <div class="mb-3">
+      <label for="prenomEleve" class="form-label fw-semibold" style="color: #000000;">Prénom de l'élève</label>
+      <input 
+        type="text" 
+        id="prenomEleve" 
+        name="Prenom" 
+        class="form-control bg-light text-dark border-0" 
+        ngModel 
+        placeholder="Entrez le prénom de l'élève">
+    </div>
 
-            <div class="d-flex justify-content-center mt-5" *ngIf="loading">
-                <div class="spinner-border" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-            </div>
+    <!-- Bouton de recherche -->
+    <div class="mt-4 text-end">
+      <button 
+        type="submit" 
+        class="btn fw-semibold px-4" 
+        style="background-color: black; color: white; border-radius: 8px;">
+        Rechercher
+      </button>
+    </div>
+    <div *ngIf="!loading && eleveTrouve.length === 0 && rechercheEffectuee" class="alert alert-warning mt-3 text-center">
+  Aucun élève trouvé.
+</div>
 
-            <div class="tableau mt-3 hover d-none d-lg-block d-md-block" *ngIf="this.eleveTrouve.length > 0">
-                <table class="table table-striped mt-3 table-hover">
-                    <thead>
-                        <tr>
-                          <th scope="col">ID</th>
-                          <th scope="col">Metricule</th>
-                          <th scope="col">Nom</th>
-                          <th scope="col">Prenom</th>
-                          <th scope="col">DateNaissance</th>
-                          <th scope="col">LieuNaissance</th>
-                          <th scope="col">Classe</th>
-                          <th scope="col">Etablissement</th>
-                          <th scope="col">Photo</th>
-                          <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let eleve of eleveTrouve">
-                          <th scope="row">{{eleve.IDELEVE}}</th>
-                          <td>{{eleve.Metricule}}</td>
-                          <td>{{eleve.Nom}}</td>
-                          <td>{{eleve.Prenom}}</td>
-                          <th scope="row">{{eleve.DateNaissance}}</th>
-                          <td>{{eleve.LieuNaissance}}</td>
-                          <td>{{eleve.Classe}}</td>
-                          <td>{{eleve.Etablissement}}</td>
-                          <td>{{eleve.Photo}}</td>
-                          <td>
-                            <!-- <button class="btn" style="color: #fff;" (click)="pageValiderPaiement(eleve)">Selectionner</button> -->
-                            <button class="btn " style="color: #fff; background-color: rgb(255, 4, 4);" (click)="openDialog(eleve)">Selectionner</button>
-                          </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div> 
+  </fieldset>
+
+
+<br><br>
+
+        <!-- Champ de recherche + bouton -->
+<div class="row g-2 align-items-center mb-3" *ngIf="eleveTrouve.length > 0">
+    
+  <div class="col-lg-8 col-md-8 col-12">
+    <input type="text" class="form-control shadow-sm border-0" name="Recherche" ngModel placeholder="🔍 Rechercher un élève..." />
+  </div>
+  <div class="col-lg-4 col-md-4 col-12 text-end">
+    <button class="btn btn-search w-100 fw-bold">Rechercher</button>
+  </div>
+</div>
+
+<!-- Spinner -->
+<div class="d-flex justify-content-center mt-5" *ngIf="loading">
+  <div class="spinner-border text-danger" role="status">
+    <span class="visually-hidden">Chargement...</span>
+  </div>
+</div>
+
+<!-- Tableau stylisé -->
+<div class="table-responsive mt-4 shadow-lg rounded" *ngIf="eleveTrouve.length > 0">
+  <table class="table table-bordered table-hover text-center align-middle styled-table">
+    <thead class="table-header text-white">
+      <tr>
+        <th>ID</th>
+        <th>Matricule</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Date Naissance</th>
+        <th>Lieu Naissance</th>
+        <th>Classe</th>
+        <th>Établissement</th>
+        <th>Photo</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let eleve of eleveTrouve">
+        <td>{{ eleve.IDELEVE }}</td>
+        <td>{{ eleve.Metricule }}</td>
+        <td>{{ eleve.Nom }}</td>
+        <td>{{ eleve.Prenom }}</td>
+        <td>{{ eleve.DateNaissance }}</td>
+        <td>{{ eleve.LieuNaissance }}</td>
+        <td>{{ eleve.Classe }}</td>
+        <td>{{ eleve.Etablissement }}</td>
+        <td>
+          <img [src]="eleve.Photo" alt="Photo élève" width="45" height="45" class="rounded-circle border border-2 border-white shadow-sm" />
+        </td>
+        <td>
+          <button class="btn btn-select" (click)="openDialog(eleve)">✔ Sélectionner</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 
             <!-- mobile -->
             <div class="zone_repete mt-5 w-100 mx-auto d-block d-lg-none d-md-none" *ngIf="this.eleveTrouve.length > 0">

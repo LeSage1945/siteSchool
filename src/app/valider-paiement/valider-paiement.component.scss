@@ -11,3 +11,7 @@ section{
     background-color: rgb(179, 205, 235);
     transition: 0.5s;
 }
+input.form-control:disabled {
+  opacity: 0.85;
+  cursor: not-allowed;
+}

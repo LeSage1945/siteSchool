@@ -1,53 +1,65 @@
-<section class="p-3" style="background-color: red; color: #000000;" >
-    <form class="p-lg-3 p-0" #form="ngForm" (ngSubmit)="submitForm(form)">
-        <p class="rond"></p>
-        <h2 class=" text-center mt-3" style="color: #ffffff;">Paiement Des Frais Scolaire De L'eleve : <br> <span class="text-center">{{nomEleve}}</span></h2>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label" style="color: #000000;">Détail</label>
-            <p class="p-2 border">{{Reference}}</p>
-            <!-- <input type="texte" class="form-control" name="Reference" [(ngModel)]="Reference" id="Montant" aria-describedby="emailHelp"> -->
-        </div>
-        <!-- none -->
-        <div class="mb-3 d-none">
-            <label for="exampleInputEmail1" class="form-label" style="color: #000000;">CodeProduit</label>
-            <input type="texte" class="form-control" name="CodeProduit" ngModel [(ngModel)]="CodeProduit" id="Montant" aria-describedby="emailHelp">
-        </div>
-        <div class="mb-3 d-none">
-            <label for="exampleInputEmail1" class="form-label" style="color: #000000;">IDEleve</label>
-            <input type="number" class="form-control" name="IDEleve" ngModel [(ngModel)]="IDEleve" id="Montant" aria-describedby="emailHelp">
-        </div>
-        <div class="mb-3 d-none">
-            <label for="exampleInputEmail1" class="form-label" style="color: #000000;">IDProduit</label>
-            <input type="texte" class="form-control" name="IDProduit" ngModel [(ngModel)]="IDProduit" id="Montant" aria-describedby="emailHelp">
-        </div>
-        <!-- none -->
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label" style="color: #000000;">Référence</label>
-            <p class="p-2 border">{{DetailOperation}}</p>
-            <!-- <input type="texte" class="form-control" name="DetailOperation" [(ngModel)]="DetailOperation" id="Montant" aria-describedby="emailHelp"> -->
-        </div>
-        
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label" style="color: #000000;">Mobile du payeur</label>
-            <input type="tel" class="form-control" name="MobilePayeur" ngModel [(ngModel)]="MobilePayeur" id="Numéro de téléphone">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label" style="color: #000000;">Montant</label>
-            <input type="number" class="form-control" name="Montant" ngModel [(ngModel)]="Montant" id="Numéro de téléphone">
-        </div>
+<section class="d-flex justify-content-center align-items-center p-3" style="min-height: 100vh; background-color: #f0f0f0;">
+  <form 
+    class="p-4 rounded-4 shadow-lg w-100" 
+    style="max-width: 400px; background-color: #ffffff;" 
+    #form="ngForm" 
+    (ngSubmit)="submitForm(form)"
+  >
+    <!-- Tête du téléphone -->
+    <div class="text-center mb-4">
+      <div class="rond mx-auto mb-2" style="width: 40px; height: 5px; background: #ccc; border-radius: 5px;"></div>
+      <h4 class="fw-bold text-danger">Paiement Frais Scolaires</h4>
+      <h5 class="text-dark">Élève : <span class="fw-semibold">{{ nomEleve }}</span></h5>
+    </div>
 
-        <!-- chargement -->
-        <div class="d-flex justify-content-center mt-5 " style="align-items: center;" *ngIf="loading">
-            <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-        </div>
-        <!-- fin chargement -->
+    <!-- Détails -->
+    <div class="mb-3">
+      <label class="form-label text-dark">Détail</label>
+      <div class="p-2 rounded bg-light border">{{ Reference }}</div>
+    </div>
 
-        <div *ngIf="message" class="text-primary">{{message}}</div>
-        
+    <div class="d-none">
+      <label class="form-label text-dark">Code Produit</label>
+      <input type="text" class="form-control" name="CodeProduit" ngModel [(ngModel)]="CodeProduit">
+    </div>
 
-        <button type="submit" class="btn form-control mt-2" style="background-color: rgb(230, 56, 56); color:#fff;">Valider</button>
-        <button type="submit" (click)="onNoClick()" mat-button style="background-color: rgba(0, 0, 0, 0.884); color: #fff;" class="btn form-control mt-2">Annuler</button>
-    </form>
+    <div class="d-none">
+      <label class="form-label text-dark">IDEleve</label>
+      <input type="number" class="form-control" name="IDEleve" ngModel [(ngModel)]="IDEleve">
+    </div>
+
+    <div class="d-none">
+      <label class="form-label text-dark">IDProduit</label>
+      <input type="text" class="form-control" name="IDProduit" ngModel [(ngModel)]="IDProduit">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label text-dark">Référence</label>
+      <div class="p-2 rounded bg-light border">{{ DetailOperation }}</div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label text-dark">📞 Mobile du payeur</label>
+      <input type="tel" class="form-control" name="MobilePayeur" ngModel [(ngModel)]="MobilePayeur">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label text-dark">💵 Montant</label>
+      <input type="number" class="form-control" name="Montant" ngModel [(ngModel)]="Montant" placeholder="Montant à payer">
+    </div>
+
+    <!-- Chargement -->
+    <div class="d-flex justify-content-center mt-4" *ngIf="loading">
+      <div class="spinner-border text-danger" role="status">
+        <span class="visually-hidden">Chargement...</span>
+      </div>
+    </div>
+
+    <!-- Message -->
+    <div *ngIf="message" class="text-primary text-center mb-3">{{ message }}</div>
+
+    <!-- Boutons -->
+    <button type="submit" class="btn btn-danger w-100 mb-2 fw-semibold">Valider</button>
+    <button type="button" (click)="onNoClick()" class="btn btn-dark w-100 fw-semibold">Annuler</button>
+  </form>
 </section>

@@ -1,4 +1,4 @@
-<section>
+<section style="background-color: red; color: white;">
     <div class="modal-body p-5">
         <form id="yearForm" #form="ngForm" (submit)="submitForm(form)">
             <div class="mb-3">
@@ -15,10 +15,11 @@
                 </select> -->
             </div>
 
-            <div class="modal-footer mt-5">
-                <button type="button" class="btn btn-secondary mx-1" data-bs-dismiss="modal" (click)="onNoClick()">Annuler</button>
-                <button type="submit" class="btn btn-success">Valider</button>
-            </div>
+           <div class="modal-footer mt-5">
+    <button type="button" class="btn btn-dark mx-1" data-bs-dismiss="modal" (click)="onNoClick()">Annuler</button>
+    <button type="submit" class="btn btn-dark">Valider</button>
+</div>
+
         </form>
     </div>
 </section>
