@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { EcoleService } from 'src/app/service/ecole.service';
 import { Iecole } from 'src/app/model/ecole';
 import { Router } from '@angular/router';
+import { ErreurGlobalService } from 'src/app/service/erreur-global.service';
 
 @Component({
   selector: 'app-ecole',
@@ -15,7 +16,8 @@ export class EcoleComponent {
 
   constructor(
     private service: EcoleService,
-    private router: Router
+    private router: Router,
+    private statutsErreur: ErreurGlobalService
   ){}
   ngOnInit(){
     this.getEcoleAll()
@@ -27,6 +29,8 @@ export class EcoleComponent {
       console.log(data);
       this.ecoles = data
       this.loading = false
+    },(Error)=>{
+      this.statutsErreur.statuErreur(Error)
     })
   }
 

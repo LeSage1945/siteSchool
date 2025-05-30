@@ -58,13 +58,22 @@ export class PaiementComponent {
     this.loading = true
     const eleve: Ieleve = form.value
     console.log(eleve);
-    
-    this.serviceEleve.postRecherEcole(eleve).subscribe((data)=>{
+    if(!eleve.Nom){
+      alert("Veuillez renseigner un nom et un prénom.")
+      this.loading = false
+    }else{
+      this.serviceEleve.postRecherEcole(eleve).subscribe((data)=>{
       console.log(data);
       this.eleveTrouve = data
       this.idEleve = data.IDELEVE      
       this.loading = false
-    })
+
+      if(data.length === 0){
+        alert("Aucun eleve trouvé.");
+        this.loading = false
+      }
+      })
+    }
   }
 
   // pageValiderPaiement(Eleve: IeleveRenvoye){    
