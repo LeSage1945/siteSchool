@@ -1,38 +1,38 @@
-<section class="p-3">
+<section class="p-3" style="background-color: red; color: #000000;" >
     <form class="p-lg-3 p-0" #form="ngForm" (ngSubmit)="submitForm(form)">
         <p class="rond"></p>
-        <h2 class=" text-center mt-3">Paiement Des Frais Scolaire De L'eleve : <br> <span class="text-center">{{nomEleve}}</span></h2>
+        <h2 class=" text-center mt-3" style="color: #ffffff;">Paiement Des Frais Scolaire De L'eleve : <br> <span class="text-center">{{nomEleve}}</span></h2>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Détail</label>
+            <label for="exampleInputEmail1" class="form-label" style="color: #000000;">Détail</label>
             <p class="p-2 border">{{Reference}}</p>
             <!-- <input type="texte" class="form-control" name="Reference" [(ngModel)]="Reference" id="Montant" aria-describedby="emailHelp"> -->
         </div>
         <!-- none -->
         <div class="mb-3 d-none">
-            <label for="exampleInputEmail1" class="form-label">CodeProduit</label>
+            <label for="exampleInputEmail1" class="form-label" style="color: #000000;">CodeProduit</label>
             <input type="texte" class="form-control" name="CodeProduit" ngModel [(ngModel)]="CodeProduit" id="Montant" aria-describedby="emailHelp">
         </div>
         <div class="mb-3 d-none">
-            <label for="exampleInputEmail1" class="form-label">IDEleve</label>
+            <label for="exampleInputEmail1" class="form-label" style="color: #000000;">IDEleve</label>
             <input type="number" class="form-control" name="IDEleve" ngModel [(ngModel)]="IDEleve" id="Montant" aria-describedby="emailHelp">
         </div>
         <div class="mb-3 d-none">
-            <label for="exampleInputEmail1" class="form-label">IDProduit</label>
+            <label for="exampleInputEmail1" class="form-label" style="color: #000000;">IDProduit</label>
             <input type="texte" class="form-control" name="IDProduit" ngModel [(ngModel)]="IDProduit" id="Montant" aria-describedby="emailHelp">
         </div>
         <!-- none -->
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Référence</label>
+            <label for="exampleInputEmail1" class="form-label" style="color: #000000;">Référence</label>
             <p class="p-2 border">{{DetailOperation}}</p>
             <!-- <input type="texte" class="form-control" name="DetailOperation" [(ngModel)]="DetailOperation" id="Montant" aria-describedby="emailHelp"> -->
         </div>
         
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Mobile du payeur</label>
+            <label for="exampleInputPassword1" class="form-label" style="color: #000000;">Mobile du payeur</label>
             <input type="tel" class="form-control" name="MobilePayeur" ngModel [(ngModel)]="MobilePayeur" id="Numéro de téléphone">
         </div>
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Montant</label>
+            <label for="exampleInputPassword1" class="form-label" style="color: #000000;">Montant</label>
             <input type="number" class="form-control" name="Montant" ngModel [(ngModel)]="Montant" id="Numéro de téléphone">
         </div>
 
@@ -47,7 +47,7 @@
         <div *ngIf="message" class="text-primary">{{message}}</div>
         
 
-        <button type="submit" class="btn form-control mt-2" style="background-color: rgb(255, 102, 0); color:#fff;">Valider</button>
-        <button type="submit" (click)="onNoClick()" mat-button style="background-color: rgba(36, 111, 252, 0.884);" class="btn form-control mt-2">Annuler</button>
+        <button type="submit" class="btn form-control mt-2" style="background-color: rgb(230, 56, 56); color:#fff;">Valider</button>
+        <button type="submit" (click)="onNoClick()" mat-button style="background-color: rgba(0, 0, 0, 0.884); color: #fff;" class="btn form-control mt-2">Annuler</button>
     </form>
 </section>

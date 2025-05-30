@@ -71,7 +71,7 @@
                           <td>{{eleve.Photo}}</td>
                           <td>
                             <!-- <button class="btn" style="color: #fff;" (click)="pageValiderPaiement(eleve)">Selectionner</button> -->
-                            <button class="btn" style="color: #fff;" (click)="openDialog(eleve)">Selectionner</button>
+                            <button class="btn " style="color: #fff; background-color: rgb(255, 4, 4);" (click)="openDialog(eleve)">Selectionner</button>
                           </td>
                         </tr>
                     </tbody>
@@ -82,7 +82,7 @@
             <div class="zone_repete mt-5 w-100 mx-auto d-block d-lg-none d-md-none" *ngIf="this.eleveTrouve.length > 0">
                 <div class="row row-cols-lg-4 row-cols-md-3 mx-auto ">
                     <div class="mb-sm-0 btn p-2" *ngFor="let eleve of eleveTrouve">
-                        <div class="card shadow" style="text-align: start;">
+                        <div class="card shadow" style="text-align: start; background-color: red;">
                             <div class="p-2">
                                 <p class="d-none">Matricule : <span class="text-primary">{{eleve.Metricule}}</span></p>
                                 <h1><span class="text-primary">{{eleve.Nom}}</span></h1>
