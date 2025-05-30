@@ -35,15 +35,6 @@ export class EcoleComponent {
     this.router.navigateByUrl('paiement/' + data.CodeEtab + '/' + data.NomEtab)
   }
 
-  // get recherches(){
-  //   return this.ecoles.filter((elem: Iecole)=>{
-  //     if(elem.CodeEtab.toLocaleLowerCase().includes(this.recherche) || elem.NomEtab.toLocaleLowerCase().includes(this.recherche) || elem.Ville.toLocaleLowerCase().includes(this.recherche)){
-  //       return true
-  //     }
-  //     return false
-  //   })
-  // }
-
   get recherches() {
   const terme = this.recherche.toLocaleLowerCase(); // normalisation du terme de recherche
   return this.ecoles.filter((elem: Iecole) => {
