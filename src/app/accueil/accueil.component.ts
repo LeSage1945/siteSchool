@@ -8,6 +8,7 @@ import {
   MatDialogTitle,
 } from '@angular/material/dialog';
 import { EcoleComponent } from '../ecole/ecole/ecole.component';
+import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 
 @Component({
   selector: 'app-accueil',
@@ -20,6 +21,38 @@ export class AccueilComponent {
 
   openDialog() {
     this.dialog.open(EcoleComponent);
+  }
+  
+
+   
+    formData = {
+    name: '',
+    email: '',
+    message: ''
+  };
+
+  messageSent = false;
+  messageError = false;
+
+  sendEmail() {
+    const templateParams = {
+      name: this.formData.name,
+      email: this.formData.email,
+      message: this.formData.message,
+      time: new Date().toLocaleString()
+    };
+
+    emailjs.send('service_e9qdv46', 'template_c8rxlof', templateParams, 'Apq5Tk6Zh_c0_p7hu')
+      .then((response: EmailJSResponseStatus) => {
+        console.log('SUCCESS!', response.status, response.text);
+        this.messageSent = true;
+        this.messageError = false;
+        this.formData = { name: '', email: '', message: '' }; // reset
+      }, (error) => {
+        console.error('FAILED...', error);
+        this.messageSent = false;
+        this.messageError = true;
+      });
   }
   
 

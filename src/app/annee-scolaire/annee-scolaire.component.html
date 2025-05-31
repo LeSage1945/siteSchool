@@ -1,25 +1,38 @@
-<section style="background-color: red; color: white;">
-    <div class="modal-body p-5">
-        <form id="yearForm" #form="ngForm" (submit)="submitForm(form)">
-            <div class="mb-3">
-                <label for="schoolYear" class="form-label">Veuillez sélectionner une année scolaire :</label>
-                <select class="form-select mt-3" id="schoolYear" name="anneeScolaire" [(ngModel)]="anneeScolaire" required>
-                      <option value="2021-2022">2021-2022</option>
-                      <option value="2022-2023">2022-2023</option>
-                      <option value="2023-2024">2023-2024</option>
-                      <option value="2024-2025">2024-2025</option>
-                </select>
+<section class="py-5" style="background-color: #c0392b; color: white;">
+  <div class="container">
+    <div class="modal-body p-4 rounded-4 shadow-lg bg-white text-dark">
+      <form id="yearForm" #form="ngForm" (submit)="submitForm(form)">
+        <h4 class="text-center fw-bold mb-4">Sélection de l'année scolaire</h4>
 
-                <!-- <select class="form-select" id="validationCustom04" name="IDDEPARTEMENT" [ngModel]="IDDEPARTEMENT">
-                    <option *ngFor="let departement of tbDepartement" [value]="departement.IDDEPARTEMENT">{{departement.NomDepartement}}</option>
-                </select> -->
-            </div>
+        <div class="mb-4">
+          <label for="schoolYear" class="form-label fw-semibold">Veuillez sélectionner une année scolaire :</label>
+          <select
+            class="form-select form-select-lg"
+            id="schoolYear"
+            name="anneeScolaire"
+            [(ngModel)]="anneeScolaire"
+            required
+          >
+            <option value="" disabled selected>-- Choisir une année --</option>
+            <option value="2021-2022">2021-2022</option>
+            <option value="2022-2023">2022-2023</option>
+            <option value="2023-2024">2023-2024</option>
+            <option value="2024-2025">2024-2025</option>
+          </select>
+        </div>
 
-           <div class="modal-footer mt-5">
-    <button type="button" class="btn btn-dark mx-1" data-bs-dismiss="modal" (click)="onNoClick()">Annuler</button>
-    <button type="submit" class="btn btn-dark">Valider</button>
-</div>
-
-        </form>
+        <div class="d-flex justify-content-end gap-2 mt-4">
+          <button
+            type="button"
+            class="btn btn-outline-secondary px-4"
+            data-bs-dismiss="modal"
+            (click)="onNoClick()"
+          >
+            Annuler
+          </button>
+          <button type="submit" class="btn btn-danger px-4">Valider</button>
+        </div>
+      </form>
     </div>
+  </div>
 </section>

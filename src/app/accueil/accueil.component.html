@@ -162,8 +162,8 @@ Grâce à sa puissance et son efficacité E-SCHOOL a franchi un nouveau pas avec
                     </div>
                 </div>
             </div>
-        </div>
-    </section> <br> <br> <br>
+        </div><br> <br> <br>
+    </section> 
 
 
 
@@ -183,37 +183,37 @@ Grâce à sa puissance et son efficacité E-SCHOOL a franchi un nouveau pas avec
             </div>
             <div class="col-lg-6 col-md-6 col-12">
                 <form class="col-12 p-4 shadow m-auto mt-lg-auto mt-md-auto mt-4">
-                    <fieldset>
-                        <div class="d-flex">
-                            <div class="mb-3 col-6">
-                                <label for="exampleFormControlInput1" class="form-label">Nom</label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nom">
-                            </div>
-                            <div class="mb-3 mx-2 col-6">
-                                <label for="exampleFormControlInput1" class="form-label">Prénom</label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Prénom">
-                            </div>
-                        </div>
+     <div class="container py-4">
+  <form (ngSubmit)="sendEmail()" #contactForm="ngForm" class="p-4 shadow rounded bg-white">
+    <h3 class="text-center mb-4">Contactez-nous</h3>
 
-                        <div class="d-flex">
-                            <div class="mb-3 col-6">
-                                <label for="exampleFormControlInput1" class="form-label">Téléphone</label>
-                                <input type="tel" class="form-control" id="exampleFormControlInput1" placeholder="Téléphone">
-                            </div>
-                
-                            <div class="mb-3 col-6 mx-2">
-                                <label for="exampleFormControlInput1" class="form-label">Addresse Email</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Tonadresse@example.com">
-                            </div>
-                        </div>
+    <div class="mb-3">
+      <label>Nom</label>
+      <input type="text" class="form-control" name="name" [(ngModel)]="formData.name" required>
+    </div>
 
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Message</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                        </div>
+    <div class="mb-3">
+      <label>Email</label>
+      <input type="email" class="form-control" name="email" [(ngModel)]="formData.email" required>
+    </div>
 
-                        <button type="submit" class="btn btn-success">Envoyé</button>
-                    </fieldset>
+    <div class="mb-3">
+      <label>Message</label>
+      <textarea class="form-control" name="message" rows="5" [(ngModel)]="formData.message" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success w-100">Envoyer</button>
+
+    <div *ngIf="messageSent" class="alert alert-success mt-3 text-center">
+      Message envoyé avec succès !
+    </div>
+    <div *ngIf="messageError" class="alert alert-danger mt-3 text-center">
+      Une erreur est survenue lors de l'envoi.
+    </div>
+  </form>
+</div>
+
+
                 </form>
             </div>
         </div>

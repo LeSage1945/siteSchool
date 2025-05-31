@@ -77,44 +77,53 @@
   </div>
 </div>
 
-<!-- Tableau stylisé -->
-<div class="table-responsive mt-4 shadow-lg rounded" *ngIf="eleveTrouve.length > 0">
-  <table class="table table-bordered table-hover text-center align-middle styled-table">
-    <thead class="table-header text-white">
-      <tr>
-        <th>ID</th>
-        <th>Matricule</th>
-        <th>Nom</th>
-        <th>Prénom</th>
-        <th>Date Naissance</th>
-        <th>Lieu Naissance</th>
-        <th>Classe</th>
-        <th>Établissement</th>
-        <th>Photo</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let eleve of eleveTrouve">
-        <td>{{ eleve.IDELEVE }}</td>
-        <td>{{ eleve.Metricule }}</td>
-        <td>{{ eleve.Nom }}</td>
-        <td>{{ eleve.Prenom }}</td>
-        <td>{{ eleve.DateNaissance }}</td>
-        <td>{{ eleve.LieuNaissance }}</td>
-        <td>{{ eleve.Classe }}</td>
-        <td>{{ eleve.Etablissement }}</td>
-        <td>
-          <img [src]="eleve.Photo" alt="Photo élève" width="45" height="45" class="rounded-circle border border-2 border-white shadow-sm" />
-        </td>
-        <td>
-          <button class="btn btn-select" (click)="openDialog(eleve)">✔ Sélectionner</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<!-- Tableau visible uniquement sur les écrans lg et plus -->
+<div class="d-none d-lg-block table-container mt-4 shadow-lg rounded">
+  <div class="table-responsive overflow-auto" style="max-height: 70vh;">
+    <table class="table table-bordered table-hover align-middle text-nowrap">
+      <thead class="table-dark text-center">
+        <tr>
+          <th>ID</th>
+          <th>Matricule</th>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Date Naissance</th>
+          <th>Lieu Naissance</th>
+          <th>Classe</th>
+          <th>Établissement</th>
+          <th>Photo</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr *ngFor="let eleve of eleveTrouve">
+          <td>{{ eleve.IDELEVE }}</td>
+          <td>{{ eleve.Metricule }}</td>
+          <td>{{ eleve.Nom }}</td>
+          <td>{{ eleve.Prenom }}</td>
+          <td>{{ eleve.DateNaissance }}</td>
+          <td>{{ eleve.LieuNaissance }}</td>
+          <td>{{ eleve.Classe }}</td>
+          <td>{{ eleve.Etablissement }}</td>
+          <td>
+            <img
+              [src]="eleve.Photo"
+              alt="Photo élève"
+              width="45"
+              height="45"
+              class="rounded-circle border border-2 border-white shadow-sm"
+            />
+          </td>
+          <td>
+            <button class="btn btn-primary btn-sm" (click)="openDialog(eleve)">
+              ✔ Sélectionner
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-
 
             <!-- mobile -->
             <div class="zone_repete mt-5 w-100 mx-auto d-block d-lg-none d-md-none" *ngIf="this.eleveTrouve.length > 0">
